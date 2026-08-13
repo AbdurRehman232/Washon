@@ -1,0 +1,92 @@
+[
+  {
+    "id": "car-wash",
+    "title": "Car Wash",
+    "category": "Exterior & Interior",
+    "shortDesc": "High-pressure foam wash, deep underbody flush, and precision hand drying.",
+    "fullDesc": "Our premium wash process uses pH-neutral soaps, touchless pressure jets, and micro-fiber drying to protect your paint clear coat while removing embedded road grime.",
+    "image": "assets/images/services/car-wash.jpg",
+    "icon": "🚿",
+    "features": [
+      "High-Pressure Foam Wash",
+      "Underbody Flush",
+      "Wheel & Tire Detailing",
+      "Vacuum & Dusting"
+    ]
+  },
+  {
+    "id": "car-detailing",
+    "title": "Car Detailing",
+    "category": "Restoration",
+    "shortDesc": "Multi-stage paint correction, ceramic coatings, and deep interior extraction.",
+    "fullDesc": "Restore your vehicle's factory shine. We eliminate swirl marks, oxidation, and interior stains using professional-grade dual-action polishers and ceramic sealants.",
+    "image": "assets/images/services/car-detailing.jpg",
+    "icon": "✨",
+    "features": [
+      "Paint Correction",
+      "9H Ceramic Coating",
+      "Leather Conditioning",
+      "Engine Bay Detailing"
+    ]
+  },
+  {
+    "id": "oil-change",
+    "title": "Oil Change",
+    "category": "Engine Care",
+    "shortDesc": "Full synthetic oil replacement, OEM filter upgrades, and fluid top-offs.",
+    "fullDesc": "Protect your engine core with premium synthetic fluids rated for extreme operational temperatures and high-shear stability.",
+    "image": "assets/images/services/oil-change.jpg",
+    "icon": "🛢️",
+    "features": [
+      "Full Synthetic Lubricants",
+      "OEM Oil Filter Replacement",
+      "Multi-Point Fluid Inspection",
+      "Waste Recycling"
+    ]
+  },
+  {
+    "id": "car-service",
+    "title": "Car Service",
+    "category": "Maintenance",
+    "shortDesc": "Comprehensive multi-point vehicle diagnostics and preventive maintenance.",
+    "fullDesc": "Systematic evaluation of vehicle safety and performance components, ensuring long-term reliability and fuel efficiency.",
+    "image": "assets/images/services/car-service.jpg",
+    "icon": "🔧",
+    "features": [
+      "Computer Diagnostics",
+      "Brake System Check",
+      "Battery & Electrical Test",
+      "Filter Replacements"
+    ]
+  },
+  {
+    "id": "car-accessories",
+    "title": "Car Accessories",
+    "category": "Upgrades",
+    "shortDesc": "Fitment of high-grade interior protection, LED lighting, and styling accessories.",
+    "fullDesc": "Enhance comfort and utility with custom-fit 7D floor mats, high-efficiency cabin filters, and modern ambient lighting accessories.",
+    "image": "assets/images/services/car-accessories.jpg",
+    "icon": "🚘",
+    "features": [
+      "Custom Floor Liners",
+      "LED Lighting Systems",
+      "Dashcam Installation",
+      "Seat Protection"
+    ]
+  },
+  {
+    "id": "quality-lubricants",
+    "title": "Quality Lubricants",
+    "category": "Performance",
+    "shortDesc": "Certified high-performance transmission, differential, and engine lubricants.",
+    "fullDesc": "Stocking world-class automotive fluids formulated to minimize internal friction and maximize thermal transfer efficiency.",
+    "image": "assets/images/services/quality-lubricants.jpg",
+    "icon": "💧",
+    "features": [
+      "API Certified Synthetics",
+      "Transmission Fluids",
+      "Brake & Power Steering Fluids",
+      "Radiator Coolants"
+    ]
+  }
+]
