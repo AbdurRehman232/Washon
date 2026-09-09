@@ -1,0 +1,61 @@
+/* ==========================================================================
+   WASHON — RESPONSIVE
+   Breakpoints: 1440 large desktop / 1024 desktop / 768 tablet / 320 mobile
+   ========================================================================== */
+
+/* ---------- Large desktop polish ---------- */
+@media (min-width: 1440px) {
+  :root { --gutter: 64px; }
+}
+
+/* ---------- Desktop / tablet-large ---------- */
+@media (max-width: 1180px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .products-grid { grid-template-columns: repeat(3, 1fr); }
+  .location-wrap { grid-template-columns: 1fr; }
+  .location-map iframe, .location-map .map-fallback { min-height: 320px; }
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1023px) {
+  .main-nav ul, .header-whatsapp { display: none; }
+  .hamburger { display: block; }
+  .footer-grid { grid-template-columns: 1fr 1fr; row-gap: 40px; }
+  .split { grid-template-columns: 1fr; gap: 36px; }
+  .split .split-media { order: -1 !important; aspect-ratio: 16/10; }
+  .stats-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 767px) {
+  :root { --header-h: 76px; --header-h-scrolled: 64px; }
+  .section { padding: 72px 0; }
+  .section.tight { padding: 56px 0; }
+
+  .services-grid { grid-template-columns: 1fr; }
+  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .reviews-grid { grid-template-columns: 1fr; gap: 18px; }
+  .stats-grid { grid-template-columns: 1fr; gap: 34px; }
+  .stat { border-left: none; border-top: 1px solid var(--gray-line); padding-top: 28px; }
+  .stat:first-child { border-top: none; padding-top: 0; }
+
+  .location-info { padding: 40px 26px; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 34px; padding-bottom: 40px; }
+  .footer-bottom { flex-direction: column; gap: 10px; text-align: center; padding: 22px 0 30px; }
+
+  .hero-content .hero-actions { flex-direction: column; align-items: flex-start; }
+  .hero-content .hero-actions .btn { width: 100%; justify-content: center; }
+
+  .page-hero { min-height: 38vh; padding: calc(var(--header-h) + 40px) 0 40px; }
+
+  .wa-float { width: 52px; height: 52px; right: 16px; bottom: 16px; }
+  .wa-float svg { width: 24px; height: 24px; }
+  .wa-tooltip { display: none; }
+
+  .mobile-nav a { font-size: 34px; }
+}
+
+@media (max-width: 420px) {
+  .products-grid { grid-template-columns: 1fr; }
+}

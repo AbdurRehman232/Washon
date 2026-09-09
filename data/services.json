@@ -1,0 +1,38 @@
+[
+  {
+    "id": "car-wash",
+    "name": "Car Wash",
+    "short": "Thorough exterior cleaning with foam wash, pressure wash, tyre cleaning and full vacuum.",
+    "features": ["Exterior cleaning", "Foam wash", "Pressure wash", "Tyre cleaning", "Vacuum"]
+  },
+  {
+    "id": "car-detailing",
+    "name": "Car Detailing",
+    "short": "Deep interior and exterior detailing that restores your vehicle's finish inside and out.",
+    "features": ["Interior cleaning", "Exterior detailing", "Polishing", "Paint care", "Ceramic coating"]
+  },
+  {
+    "id": "oil-change",
+    "name": "Oil Change",
+    "short": "Fast, reliable engine oil replacement with a full fluid inspection.",
+    "features": ["Engine oil replacement", "Oil filter", "Fluid inspection", "Lubricant recommendations"]
+  },
+  {
+    "id": "car-service",
+    "name": "Car Service",
+    "short": "Essential vehicle maintenance to keep your car running safely and smoothly.",
+    "features": ["Basic inspection", "Battery check", "Air filter", "Tyre pressure", "Fluid checks"]
+  },
+  {
+    "id": "car-accessories",
+    "name": "Car Accessories",
+    "short": "A curated selection of accessories to protect and personalize your vehicle.",
+    "features": ["[Add accessory categories WashOn stocks]"]
+  },
+  {
+    "id": "quality-lubricants",
+    "name": "Quality Lubricants",
+    "short": "Trusted lubricant brands and grades for engines, gearboxes and more.",
+    "features": ["[Add lubricant brands WashOn stocks]"]
+  }
+]

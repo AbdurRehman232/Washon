@@ -1,0 +1,14 @@
+[
+  { "title": "Foam Wash in Progress", "category": "Car Wash", "image": "https://loremflickr.com/900/900/carwash,foam?lock=11" },
+  { "title": "Pressure Wash Detail", "category": "Car Wash", "image": "https://loremflickr.com/900/900/carwash,pressure?lock=12" },
+  { "title": "Full Exterior Detailing", "category": "Exterior", "image": "https://loremflickr.com/900/900/car,polish?lock=13" },
+  { "title": "Paint Correction", "category": "Exterior", "image": "https://loremflickr.com/900/900/carpaint,polish?lock=14" },
+  { "title": "Interior Deep Clean", "category": "Interior", "image": "https://loremflickr.com/900/900/carinterior,vacuum?lock=15" },
+  { "title": "Leather Seat Care", "category": "Interior", "image": "https://loremflickr.com/900/900/carseat,leather?lock=16" },
+  { "title": "Engine Bay Cleaning", "category": "Engine", "image": "https://loremflickr.com/900/900/carengine,clean?lock=17" },
+  { "title": "Oil Change Service", "category": "Engine", "image": "https://loremflickr.com/900/900/oilchange,mechanic?lock=18" },
+  { "title": "Ceramic Coating Application", "category": "Ceramic Coating", "image": "https://loremflickr.com/900/900/carcoating,shine?lock=19" },
+  { "title": "Ceramic Finish Result", "category": "Ceramic Coating", "image": "https://loremflickr.com/900/900/carshine,glossy?lock=20" },
+  { "title": "Detailing Workshop", "category": "Detailing", "image": "https://loremflickr.com/900/900/detailing,workshop?lock=21" },
+  { "title": "Tyre & Wheel Detail", "category": "Detailing", "image": "https://loremflickr.com/900/900/wheel,tyre?lock=22" }
+]

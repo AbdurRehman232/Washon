@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Ahmed Raza",
+    "vehicle": "Honda Civic 2021",
+    "service": "Car Detailing",
+    "rating": 5,
+    "review": "Got my car fully detailed here and it looked better than the day I bought it. The interior smelled fresh and the paint had a deep shine. Really professional team.",
+    "date": "2 weeks ago"
+  },
+  {
+    "name": "Bilal Khan",
+    "vehicle": "Toyota Corolla 2019",
+    "service": "Oil Change",
+    "rating": 5,
+    "review": "Quick and reliable oil change service. They also checked my other fluids without me even asking. Honest and efficient — will be coming back.",
+    "date": "3 weeks ago"
+  },
+  {
+    "name": "Sana Malik",
+    "vehicle": "Suzuki Swift 2020",
+    "service": "Car Wash",
+    "rating": 5,
+    "review": "Best car wash in the area, hands down. My car looked spotless inside and out, and the staff were friendly and quick.",
+    "date": "1 month ago"
+  },
+  {
+    "name": "Usman Tariq",
+    "vehicle": "Kia Sportage 2022",
+    "service": "Ceramic Coating",
+    "rating": 5,
+    "review": "The ceramic coating results are amazing — the paint looks glossy and water just slides right off. Worth every rupee.",
+    "date": "1 month ago"
+  },
+  {
+    "name": "Ayesha Farooq",
+    "vehicle": "Hyundai Tucson 2020",
+    "service": "Car Service",
+    "rating": 4,
+    "review": "Good, thorough inspection and they explained everything clearly before doing any work. A bit of a wait on a busy Saturday, but worth it.",
+    "date": "6 weeks ago"
+  },
+  {
+    "name": "Hamza Sheikh",
+    "vehicle": "Suzuki Alto 2018",
+    "service": "Quality Lubricants",
+    "rating": 5,
+    "review": "They helped me pick the right engine oil grade for my car and explained the difference between the options. Very knowledgeable staff.",
+    "date": "2 months ago"
+  }
+]

@@ -1,0 +1,141 @@
+/* ==========================================================================
+   WASHON — ANIMATIONS
+   Hero entrance sequence, scroll indicator, page transitions, counters.
+   ========================================================================== */
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--black);
+  color: var(--white);
+}
+.hero .hero-media {
+  position: absolute; inset: 0;
+  z-index: 0;
+}
+.hero .hero-media img {
+  width: 100%; height: 100%; object-fit: cover;
+  animation: heroZoom 16s var(--ease) forwards;
+}
+.hero .hero-media::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.35) 40%, rgba(10,10,10,0.9) 100%);
+}
+@keyframes heroZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.12); }
+}
+
+.hero-content { position: relative; z-index: 2; }
+.hero-content .eyebrow {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: heroIn 0.7s var(--ease) 0.15s forwards;
+}
+.hero-content h1 {
+  font-size: clamp(56px, 10vw, 132px);
+  margin-top: 14px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroIn 0.85s var(--ease) 0.35s forwards;
+}
+.hero-content h1 .line { display: block; }
+.hero-content p.lead {
+  color: rgba(255,255,255,0.78);
+  margin-top: 22px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroIn 0.8s var(--ease) 0.62s forwards;
+}
+.hero-content .hero-actions {
+  display: flex;
+  gap: 18px;
+  margin-top: 38px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroIn 0.8s var(--ease) 0.8s forwards;
+}
+.hero-content .hero-rule {
+  width: 0;
+  height: 2px;
+  background: var(--red);
+  margin-top: 42px;
+  animation: heroRule 0.9s var(--ease) 1.05s forwards;
+}
+@keyframes heroIn {
+  to { opacity: 1; transform: translate(0,0); }
+}
+@keyframes heroRule {
+  to { width: 96px; }
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 34px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-size: 10.5px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  opacity: 0;
+  animation: heroIn 0.8s var(--ease) 1.2s forwards;
+}
+.scroll-cue .cue-line {
+  width: 1px;
+  height: 34px;
+  background: rgba(255,255,255,0.3);
+  position: relative;
+  overflow: hidden;
+}
+.scroll-cue .cue-line::after {
+  content: '';
+  position: absolute;
+  top: -100%; left: 0;
+  width: 100%; height: 100%;
+  background: var(--red);
+  animation: cueDrop 1.8s ease-in-out infinite;
+}
+@keyframes cueDrop {
+  0% { top: -100%; }
+  60% { top: 100%; }
+  100% { top: 100%; }
+}
+
+/* ---------- Page transition overlay ---------- */
+#page-transition {
+  position: fixed;
+  inset: 0;
+  background: var(--black);
+  z-index: 9998;
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+#page-transition.enter {
+  animation: ptIn 0.45s var(--ease) forwards;
+}
+#page-transition.leave {
+  animation: ptOut 0.45s var(--ease) forwards;
+}
+@keyframes ptIn { from { transform: translateY(-100%);} to { transform: translateY(0);} }
+@keyframes ptOut { from { transform: translateY(0);} to { transform: translateY(100%);} }
+
+body.is-loaded #main-content {
+  animation: contentIn 0.6s var(--ease) 0.1s both;
+}
+@keyframes contentIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}

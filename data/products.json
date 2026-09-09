@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Premium Engine Oil",
+    "description": "High-quality engine lubricant designed for reliable engine protection and smoother performance.",
+    "price": "Rs. 3,500",
+    "category": "Engine Oil",
+    "image": "https://loremflickr.com/800/800/motoroil,engine?lock=1"
+  },
+  {
+    "id": 2,
+    "name": "Synthetic Gear Oil",
+    "description": "Long-lasting synthetic lubricant formulated for transmission and gearbox protection.",
+    "price": "Rs. 2,800",
+    "category": "Lubricants",
+    "image": "https://loremflickr.com/800/800/oilbottle,garage?lock=2"
+  },
+  {
+    "id": 3,
+    "name": "Ceramic Coating Kit",
+    "description": "Professional-grade ceramic protection kit for a durable, high-gloss paint finish.",
+    "price": "Rs. 6,500",
+    "category": "Car Care",
+    "image": "https://loremflickr.com/800/800/carwax,detailing?lock=3"
+  },
+  {
+    "id": 4,
+    "name": "Microfiber Detailing Set",
+    "description": "A complete set of microfiber towels and applicators for streak-free interior and exterior care.",
+    "price": "Rs. 1,800",
+    "category": "Car Care",
+    "image": "https://loremflickr.com/800/800/microfiber,cloth?lock=4"
+  },
+  {
+    "id": 5,
+    "name": "Premium Air Freshener",
+    "description": "Long-lasting cabin fragrance designed for a fresh, premium in-car experience.",
+    "price": "Rs. 650",
+    "category": "Accessories",
+    "image": "https://loremflickr.com/800/800/carinterior,accessory?lock=5"
+  },
+  {
+    "id": 6,
+    "name": "All-Weather Floor Mats",
+    "description": "Durable, easy-to-clean floor mats built to handle daily wear and changing weather.",
+    "price": "Rs. 4,200",
+    "category": "Accessories",
+    "image": "https://loremflickr.com/800/800/floormat,car?lock=6"
+  },
+  {
+    "id": 7,
+    "name": "Brake Fluid DOT 4",
+    "description": "High-performance brake fluid engineered for consistent stopping power.",
+    "price": "Rs. 950",
+    "category": "Lubricants",
+    "image": "https://loremflickr.com/800/800/brakefluid,automotive?lock=7"
+  },
+  {
+    "id": 8,
+    "name": "Tyre Shine Spray",
+    "description": "Fast-acting formula that restores a deep, matte-free finish to tyres in seconds.",
+    "price": "Rs. 850",
+    "category": "Car Care",
+    "image": "https://loremflickr.com/800/800/tire,wheel?lock=8"
+  },
+  {
+    "id": 9,
+    "name": "Fully Synthetic Motor Oil 5W-30",
+    "description": "Advanced full-synthetic formula for modern engines, offering better fuel economy and cold-start protection.",
+    "price": "Rs. 5,200",
+    "category": "Engine Oil",
+    "image": "https://loremflickr.com/800/800/synthetic,motoroil?lock=9"
+  },
+  {
+    "id": 10,
+    "name": "Leather Care Kit",
+    "description": "Cleaner and conditioner set that restores and protects leather seats and trim.",
+    "price": "Rs. 2,200",
+    "category": "Car Care",
+    "image": "https://loremflickr.com/800/800/leathercare,carseat?lock=10"
+  }
+]
