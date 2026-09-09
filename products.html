@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products | WashOn — Lubricants & Car Care</title>
+<meta name="description" content="Browse WashOn's product catalog: quality lubricants, car care essentials and accessories, with search and category filters.">
+<link rel="canonical" href="https://carwashon.com/products.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Products | WashOn — Lubricants & Car Care">
+<meta property="og:description" content="Browse WashOn's product catalog: quality lubricants, car care essentials and accessories, with search and category filters.">
+<meta property="og:url" content="https://carwashon.com/products.html">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div id="loader" aria-hidden="true">
+  <div class="loader-mark">WASH<span>ON</span></div>
+  <div class="loader-tag">Premium Care. Peak Performance.</div>
+  <div class="loader-line"></div>
+</div>
+<div id="page-transition"></div>
+<div id="scroll-progress"></div>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">WASH<span>ON</span></a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a href="#" class="header-whatsapp" data-whatsapp-link>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.32-1.39a9.9 9.9 0 0 0 4.67 1.19h.01c5.46 0 9.9-4.45 9.9-9.9C21.95 6.45 17.5 2 12.04 2Zm5.8 14.13c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.16-4.94-4.35-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.11.32.02.51-.09.19-.14.3-.28.46-.14.16-.29.36-.42.48-.14.13-.28.28-.12.55.16.27.71 1.17 1.52 1.89 1.05.93 1.93 1.22 2.2 1.36.27.14.43.11.59-.07.16-.18.68-.79.87-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.82.87.27.13.44.19.51.3.07.11.07.63-.17 1.31Z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-nav" aria-hidden="true">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="products.html">Products</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="reviews.html">Reviews</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="#" class="btn btn-primary" data-whatsapp-link>Message on WhatsApp</a>
+</nav>
+
+<main id="main-content">
+
+  <section class="page-hero">
+    <div class="ph-bg"><div class="photo ph-fallback" data-label="Products"></div></div>
+    <div class="container">
+      <p class="eyebrow">Shop WashOn</p>
+      <h1>Products &amp;<br>Lubricants</h1>
+      <p class="lead">Quality lubricants, car care essentials and accessories — everything your vehicle needs.</p>
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span class="accent">Products</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="search-row">
+        <div class="filter-bar" id="product-filters">
+          <button data-filter="all" class="active">All</button>
+          <button data-filter="Engine Oil">Engine Oil</button>
+          <button data-filter="Lubricants">Lubricants</button>
+          <button data-filter="Car Care">Car Care</button>
+          <button data-filter="Accessories">Accessories</button>
+        </div>
+        <div class="search-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input type="search" id="product-search" placeholder="Search products…" aria-label="Search products">
+        </div>
+      </div>
+      <div class="products-grid" id="products-grid" data-stagger></div>
+    </div>
+  </section>
+
+  <!-- Product detail modal -->
+  <div class="product-modal" id="product-modal" role="dialog" aria-modal="true" aria-label="Product details">
+    <div class="pm-inner">
+      <button class="pm-close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      <div class="photo pm-photo"><img class="pm-img" src="D:\WashOn\assets\images\WhatsApp Image 2026-08-05 at 9.12.51 AM (1).jpeg" alt="WashOn"></div>
+      <div class="pm-content">
+        <span class="pc-cat pm-cat">abc</span>
+        <h3 class="pm-name">Washon</h3>
+        <p class="pm-desc">description</p>
+        <div class="pm-price">1500</div>
+        <a href="contact.html" class="btn btn-primary">Enquire About This Product</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">WASH<span>ON</span></a>
+        <p>Premium Care. Peak Performance.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook" data-facebook><svg viewBox="0 0 24 24"><path d="M13 22v-9h3l.5-4H13V7c0-1.2.4-2 2.2-2H17V1.3C16.6 1.2 15.4 1 14 1c-3 0-5 1.8-5 5.2V9H6v4h3v9h4z"/></svg></a>
+          <a href="#" aria-label="Instagram" data-instagram><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.07 1.2.06 2 .25 2.5.42.6.24 1 .53 1.5 1s.8.9 1 1.5c.17.5.36 1.3.42 2.5.07 1.2.07 1.6.07 4.8s0 3.6-.07 4.8c-.06 1.2-.25 2-.42 2.5a4 4 0 0 1-1 1.5 4 4 0 0 1-1.5 1c-.5.17-1.3.36-2.5.42-1.2.07-1.6.07-4.8.07s-3.6 0-4.8-.07c-1.2-.06-2-.25-2.5-.42a4 4 0 0 1-1.5-1 4 4 0 0 1-1-1.5c-.17-.5-.36-1.3-.42-2.5C1.2 15.6 1.2 15.2 1.2 12s0-3.6.07-4.8c.06-1.2.25-2 .42-2.5a4 4 0 0 1 1-1.5 4 4 0 0 1 1.5-1c.5-.17 1.3-.36 2.5-.42C7.9 2.2 8.3 2.2 12 2.2zm0 1.8c-3.15 0-3.52 0-4.76.07-1 .05-1.5.2-1.86.34-.47.18-.8.4-1.15.75s-.57.68-.75 1.15c-.14.36-.3.87-.34 1.86C3.02 8.4 3 8.77 3 12s0 3.52.07 4.76c.05 1 .2 1.5.34 1.86.18.47.4.8.75 1.15s.68.57 1.15.75c.36.14.87.3 1.86.34 1.24.07 1.6.07 4.76.07s3.52 0 4.76-.07c1-.05 1.5-.2 1.86-.34.47-.18.8-.4 1.15-.75s.57-.68.75-1.15c.14-.36.3-.87.34-1.86.07-1.24.07-1.6.07-4.76s0-3.52-.07-4.76c-.05-1-.2-1.5-.34-1.86a2.2 2.2 0 0 0-.75-1.15 2.2 2.2 0 0 0-1.15-.75c-.36-.14-.87-.3-1.86-.34C15.52 4 15.15 4 12 4zm0 3.4a4.6 4.6 0 1 1 0 9.2 4.6 4.6 0 0 1 0-9.2zm0 1.8a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6zm4.8-2a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#car-wash">Car Wash</a></li>
+          <li><a href="services.html#car-detailing">Detailing</a></li>
+          <li><a href="services.html#oil-change">Oil Change</a></li>
+          <li><a href="services.html#car-service">Car Service</a></li>
+          <li><a href="services.html#car-accessories">Accessories</a></li>
+          <li><a href="services.html#quality-lubricants">Lubricants</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li class="muted" data-address>[ADD BUSINESS ADDRESS]</li>
+          <li class="muted" data-phone-text>[ADD PHONE NUMBER]</li>
+          <li class="muted" data-hours>[ADD OPENING HOURS]</li>
+          <li><a href="mailto:info@carwashon.com" data-email>info@carwashon.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year>2026</span> WashOn. All Rights Reserved.</span>
+      <a href="contact.html">Get in touch</a>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="wa-float" data-whatsapp-link aria-label="Chat with WashOn on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.32-1.39a9.9 9.9 0 0 0 4.67 1.19h.01c5.46 0 9.9-4.45 9.9-9.9C21.95 6.45 17.5 2 12.04 2Zm5.8 14.13c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.16-4.94-4.35-.14-.19-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.11.32.02.51-.09.19-.14.3-.28.46-.14.16-.29.36-.42.48-.14.13-.28.28-.12.55.16.27.71 1.17 1.52 1.89 1.05.93 1.93 1.22 2.2 1.36.27.14.43.11.59-.07.16-.18.68-.79.87-1.06.18-.27.36-.22.6-.13.24.09 1.55.73 1.82.87.27.13.44.19.51.3.07.11.07.63-.17 1.31Z"/></svg>
+  <span class="wa-tooltip">Chat on WhatsApp</span>
+</a>
+
+
+<script src="js/main.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/products.js"></script>
+</body>
+</html>
