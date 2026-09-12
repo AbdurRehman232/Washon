@@ -79,4 +79,135 @@
     "category": "Car Care",
     "image": "https://loremflickr.com/800/800/leathercare,carseat?lock=10"
   }
+ [
+  {
+    "id": 11,
+    "name": "Peach",
+    "description": "Peach brings a soft, juicy sweetness with a gentle fruity warmth that keeps the cabin smelling fresh all day.",
+    "price": "Rs. 1,200",
+    "category": "Accessories",
+    "image": "assets/images/Areon-Gel-Peach-listing-2x.png"
+  },
+  {
+    "id": 12,
+    "name": "Watermelon",
+    "description": "Watermelon delivers a crisp, refreshing summer scent that instantly lightens up any drive.",
+    "price": "Rs. 1,200",
+    "category": "Accessories",
+    "image": "assets/images/Areon-Gel-Watermelon-listing-2x.png"
+  },
+  {
+    "id": 13,
+    "name": "Apple Cinnamon",
+    "description": "Apple Cinnamon blends crisp orchard apple with warm spice for a cozy, comforting aroma.",
+    "price": "Rs. 1,200",
+    "category": "Accessories",
+    "image": "assets/images/Areon-Gel-Apple-Cinnamon-listing-2x.png"
+  },
+  {
+    "id": 14,
+    "name": "Citrus Squash",
+    "description": "Citrus Squash offers a zesty, energizing burst of citrus that keeps the air feeling clean and alert.",
+    "price": "Rs. 1,200",
+    "category": "Accessories",
+    "image": "assets/images/Areon-Gel-Citrus-Squash-listing-2x.png"
+  },
+  {
+    "id": 15,
+    "name": "Strawberry",
+    "description": "Strawberry gives a sweet, playful fruity scent that keeps the cabin feeling light and pleasant.",
+    "price": "Rs. 1,200",
+    "category": "Accessories",
+    "image": "assets/images/Areon-Gel-Strawberry-listing-2x.png"
+  },
+  {
+    "id": 16,
+    "name": "Anti-Tobacco",
+    "description": "Anti-Tobacco is formulated to neutralize smoke odors, leaving the interior clean and odor-free.",
+    "price": "Rs. 1,200",
+    "category": "Accessories",
+    "image": "assets/images/Areon-Gel-Anti-Tobacco-listing-2x.png"
+  },
+  {
+    "id": 17,
+    "name": "Black Crystal",
+    "description": "Black Crystal is a sophisticated and refined fragrance that combines freshness, woody depth, and elegant sensuality.",
+    "price": "Rs. 1,300",
+    "category": "Accessories",
+    "image": "assets/images/Areon-Gel-Black-Crystal-listing-2x.png"
+  },
+  {
+    "id": 18,
+    "name": "Lilac",
+    "description": "Lilac brings a soft, floral freshness with a delicate touch of spring to the cabin.",
+    "price": "Rs. 1,200",
+    "category": "Accessories",
+    "image": "assets/images/Areon-Gel-Lilac-listing-2x.png"
+  },
+  {
+    "id": 19,
+    "name": "Bubble Gum",
+    "description": "Bubble Gum is a fun, nostalgic sweet scent that keeps every ride feeling light and cheerful.",
+    "price": "Rs. 1,200",
+    "category": "Accessories",
+    "image": "assets/images/Areon-Gel-Bubble-Gum-listing-2x.png"
+  },
+  {
+    "id": 20,
+    "name": "Vanilla",
+    "description": "Vanilla offers a warm, creamy, comforting aroma that fills the cabin with subtle sweetness.",
+    "price": "Rs. 1,200",
+    "category": "Accessories",
+    "image": "assets/images/Areon-Gel-Vanilla-listing-2x.png"
+  },
+  {
+    "id": 21,
+    "name": "Tutti Frutti",
+    "description": "Tutti Frutti mixes a medley of fruity notes for a vibrant, all-around fresh scent.",
+    "price": "Rs. 1,200",
+    "category": "Accessories",
+    "image": "assets/images/Areon-Gel-Tutti-Frutti-listing-2x.png"
+  },
+  {
+    "id": 22,
+    "name": "Passion",
+    "description": "Passion is a bold, exotic fruity-floral blend designed to leave a lasting impression.",
+    "price": "Rs. 1,200",
+    "category": "Accessories",
+    "image": "assets/images/Areon-Gel-Passion-listing-2x.png"
+  },
+  {
+    "id": 23,
+    "name": "Desire",
+    "description": "Desire carries a rich, sensual fragrance with warm undertones for a premium in-car experience.",
+    "price": "Rs. 1,200",
+    "category": "Accessories",
+    "image": "assets/images/Areon-Gel-Desire-listing-2x.png"
+  },
+  {
+    "id": 24,
+    "name": "Wish",
+    "description": "Wish delivers a light, dreamy floral scent that keeps the cabin feeling calm and pleasant.",
+    "price": "Rs. 1,200",
+    "category": "Accessories",
+    "image": "assets/images/Areon-Gel-Wish-listing-2x.png"
+  },
+  {
+    "id": 25,
+    "name": "Orange",
+    "description": "Orange gives a bright, tangy citrus burst that keeps the air feeling fresh and uplifting.",
+    "price": "Rs. 1,200",
+    "category": "Accessories",
+    "image": "assets/images/Areon-Gel-Orange-listing-2x.png"
+  },
+  {
+    "id": 26,
+    "name": "Dream",
+    "description": "Dream offers a soft, soothing fragrance blend designed for a relaxed and pleasant drive.",
+    "price": "Rs. 1,200",
+    "category": "Accessories",
+    "image": "assets/images/Areon-Gel-Dream-listing-2x.png"
+  }
+]
+  
 ]
