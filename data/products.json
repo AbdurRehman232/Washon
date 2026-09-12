@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Anti-Tobacco",
     "description": "Let nature come into your car and take you to a picnic amidst forest flowers and meadows.",
-    "price": "Rs. 1,200",
+    "price": "Rs. 1,100",
     "category": "Accessories",
     "image": "assets/images/Areon-Gel-Anti-Tobacco-listing-2x.png"
   },
@@ -33,19 +33,19 @@
   },
   {
     "id": 5,
-    "name": "Premium Air Freshener",
-    "description": "Long-lasting cabin fragrance designed for a fresh, premium in-car experience.",
-    "price": "Rs. 650",
+    "name": "Apple & Cinnamon GCK16",
+    "description": "The wonderful blend of crisp red apples and a touch of cinnamon will fill your space with feelings of genuine warmth and comfort.",
+    "price": "Rs. 1,200",
     "category": "Accessories",
-    "image": "https://loremflickr.com/800/800/carinterior,accessory?lock=5"
+    "image": "assets/images/Areon-Gel-Apple-Cinnamon-listing-2x.png"
   },
   {
     "id": 6,
-    "name": "All-Weather Floor Mats",
-    "description": "Durable, easy-to-clean floor mats built to handle daily wear and changing weather.",
-    "price": "Rs. 4,200",
+    "name": "Black Crystal",
+    "description": "Black Crystal is a sophisticated and refined fragrance that combines freshness, woody depth, and elegant sensuality.",
+    "price": "Rs. 1,300",
     "category": "Accessories",
-    "image": "https://loremflickr.com/800/800/floormat,car?lock=6"
+    "image": "assets/images/Areon-Gel-Black-Crystal-listing-2x.png"
   },
   {
     "id": 7,
