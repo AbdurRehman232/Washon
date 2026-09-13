@@ -53,13 +53,14 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('[data-call]').forEach(el => el.href = `tel:${cfg.phoneNumbers[0].replace(/\s+/g,'')}`);
   document.querySelectorAll('[data-directions]').forEach(el => el.href = cfg.mapsDirections);
 
-  // Floating/header WhatsApp buttons — reuses the popup menu logic from before
+  // Floating/header WhatsApp buttons — popup menu with number choice
   document.querySelectorAll('[data-whatsapp-link]').forEach(waBtn => {
     if (waBtn.dataset.waBound) return; // avoid double-binding on multiple buttons
     waBtn.dataset.waBound = "true";
 
     const menu = document.createElement('div');
     menu.style.cssText = `position:absolute; bottom:70px; right:0; background:#1a1a1a; border:1px solid #333; border-radius:10px; padding:8px; display:none; flex-direction:column; gap:6px; min-width:200px; box-shadow:0 8px 24px rgba(0,0,0,0.4); z-index:999;`;
+
     cfg.whatsappNumbers.forEach((num, i) => {
       const label = (cfg.phoneNumbers && cfg.phoneNumbers[i]) ? cfg.phoneNumbers[i] : num;
       const item = document.createElement('a');
@@ -68,23 +69,39 @@ document.addEventListener('DOMContentLoaded', function () {
       item.rel = 'noopener';
       item.textContent = `WhatsApp: ${label}`;
       item.style.cssText = `color:#fff; text-decoration:none; padding:10px 12px; border-radius:6px; font-size:14px; background:#222;`;
+      item.addEventListener('mouseenter', () => item.style.background = '#e0202f');
+      item.addEventListener('mouseleave', () => item.style.background = '#222');
       menu.appendChild(item);
     });
-    waBtn.style.position = 'relative';
+
+    // Only set relative positioning if the button isn't already fixed/absolute
+    // (prevents breaking the floating button's CSS position)
+    const currentPosition = getComputedStyle(waBtn).position;
+    if (currentPosition === 'static') {
+      waBtn.style.position = 'relative';
+    }
+
     waBtn.appendChild(menu);
-    waBtn.addEventListener('click', e => {
+
+    waBtn.addEventListener('click', function (e) {
       e.preventDefault();
       e.stopPropagation();
       menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
     });
   });
 
-  document.addEventListener('click', e => {
-    document.querySelectorAll('[data-whatsapp-link] > div').forEach(menu => {
-      if (!menu.parentElement.contains(e.target)) menu.style.display = 'none';
+  // Close any open popup menu when clicking outside it
+  document.addEventListener('click', function (e) {
+    document.querySelectorAll('[data-whatsapp-link]').forEach(waBtn => {
+      const menu = waBtn.querySelector('div');
+      if (menu && !waBtn.contains(e.target)) {
+        menu.style.display = 'none';
+      }
     });
   });
 });
+
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
