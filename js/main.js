@@ -50,8 +50,42 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('[data-facebook]').forEach(el => el.href = cfg.facebook);
   document.querySelectorAll('[data-instagram]').forEach(el => el.href = cfg.instagram);
 
-  document.querySelectorAll('[data-call]').forEach(el => el.href = `tel:${cfg.phoneNumbers[0].replace(/\s+/g,'')}`);
   document.querySelectorAll('[data-directions]').forEach(el => el.href = cfg.mapsDirections);
+
+  // Plain Call Now buttons elsewhere on the site — link directly, no popup
+  document.querySelectorAll('[data-call]:not(#contact-call-btn)').forEach(el => {
+    el.href = `tel:${cfg.phoneNumbers[0].replace(/\s+/g, '')}`;
+  });
+
+  // Contact page's Call Now button — popup with number choice
+  const contactCallBtn = document.getElementById('contact-call-btn');
+  if (contactCallBtn) {
+    const menu = document.createElement('div');
+    menu.style.cssText = `position:absolute; bottom:70px; right:0; background:#1a1a1a; border:1px solid #333; border-radius:10px; padding:8px; display:none; flex-direction:column; gap:6px; min-width:200px; box-shadow:0 8px 24px rgba(0,0,0,0.4); z-index:999;`;
+
+    cfg.phoneNumbers.forEach(num => {
+      const item = document.createElement('a');
+      item.href = `tel:${num.replace(/\s+/g, '')}`;
+      item.textContent = `Call: ${num}`;
+      item.style.cssText = `color:#fff; text-decoration:none; padding:10px 12px; border-radius:6px; font-size:14px; background:#222;`;
+      item.addEventListener('mouseenter', () => item.style.background = '#e0202f');
+      item.addEventListener('mouseleave', () => item.style.background = '#222');
+      menu.appendChild(item);
+    });
+
+    const callBtnPosition = getComputedStyle(contactCallBtn).position;
+    if (callBtnPosition === 'static') {
+      contactCallBtn.style.position = 'relative';
+    }
+
+    contactCallBtn.appendChild(menu);
+
+    contactCallBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    });
+  }
 
   // Floating/header WhatsApp buttons — popup menu with number choice
   document.querySelectorAll('[data-whatsapp-link]').forEach(waBtn => {
@@ -90,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Close any open popup menu when clicking outside it
+  // Close any open popup menu (WhatsApp or Call) when clicking outside it
   document.addEventListener('click', function (e) {
     document.querySelectorAll('[data-whatsapp-link]').forEach(waBtn => {
       const menu = waBtn.querySelector('div');
@@ -98,9 +132,14 @@ document.addEventListener('DOMContentLoaded', function () {
         menu.style.display = 'none';
       }
     });
+    if (contactCallBtn) {
+      const callMenu = contactCallBtn.querySelector('div');
+      if (callMenu && !contactCallBtn.contains(e.target)) {
+        callMenu.style.display = 'none';
+      }
+    }
   });
 });
-
 
 
 
