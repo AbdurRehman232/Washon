@@ -20,15 +20,15 @@
     "name": "Microfiber Glass Cleaning Cloth",
     "description": "Lint-free microfiber cloth designed for streak-free glass and mirror cleaning, gentle enough for daily use.",
     "price": "Rs. 250",
-    "category": "Accessories",
-    "image": "assets/images/microfiber-glass cleaning.png"
+    "category": "Car Care",
+    "image": "assets/images/microfiber-glass-cleaning.png"
   },
   {
     "id": 4,
     "name": "Microfiber 800GSM",
     "description": "Ultra-thick 800GSM microfiber towel with a soft plush side and a scratch-free edge, built for safe drying and polishing without swirl marks.",
     "price": "Rs. 400",
-    "category": "Accessories",
+    "category": "Car Care",
     "image": "assets/images/Microfiber-800gsm.png"
   },
   {
