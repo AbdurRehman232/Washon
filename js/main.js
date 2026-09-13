@@ -27,43 +27,39 @@ window.WASHON = {
 };
 
 
-
 document.addEventListener('DOMContentLoaded', function () {
   const cfg = window.WASHON;
-  const waBtn = document.querySelector('[data-whatsapp-link]'); // matches your actual HTML
+  if (!cfg) return; // config.js not loaded — check script order
 
-  // Footer-style links, if you're using them elsewhere
-  document.querySelectorAll('[data-phone-links]').forEach(el => {
-    el.innerHTML = cfg.phoneNumbers
-      .map(num => `<a href="tel:${num.replace(/\s+/g, '')}">${num}</a>`)
-      .join('<br>');
-  });
-  document.querySelectorAll('[data-whatsapp-links]').forEach(el => {
-    el.innerHTML = cfg.whatsappNumbers
-      .map(num => `<a href="https://wa.me/${num}" target="_blank" rel="noopener">WhatsApp: ${num}</a>`)
-      .join('<br>');
+  document.querySelectorAll('[data-address]').forEach(el => el.textContent = cfg.address);
+  document.querySelectorAll('[data-hours]').forEach(el => el.textContent = cfg.hours);
+
+  document.querySelectorAll('[data-phone-text]').forEach(el => {
+    el.innerHTML = cfg.phoneNumbers.map(n => `<a href="tel:${n.replace(/\s+/g,'')}">${n}</a>`).join('<br>');
   });
 
-  // Floating button popup menu
-  if (waBtn && cfg.whatsappNumbers && cfg.whatsappNumbers.length) {
+  document.querySelectorAll('[data-whatsapp-text]').forEach(el => {
+    el.innerHTML = cfg.whatsappNumbers.map(n => `<a href="https://wa.me/${n}" target="_blank" rel="noopener">+${n}</a>`).join('<br>');
+  });
+
+  document.querySelectorAll('[data-email]').forEach(el => {
+    el.textContent = cfg.email;
+    el.href = `mailto:${cfg.email}`;
+  });
+
+  document.querySelectorAll('[data-facebook]').forEach(el => el.href = cfg.facebook);
+  document.querySelectorAll('[data-instagram]').forEach(el => el.href = cfg.instagram);
+
+  document.querySelectorAll('[data-call]').forEach(el => el.href = `tel:${cfg.phoneNumbers[0].replace(/\s+/g,'')}`);
+  document.querySelectorAll('[data-directions]').forEach(el => el.href = cfg.mapsDirections);
+
+  // Floating/header WhatsApp buttons — reuses the popup menu logic from before
+  document.querySelectorAll('[data-whatsapp-link]').forEach(waBtn => {
+    if (waBtn.dataset.waBound) return; // avoid double-binding on multiple buttons
+    waBtn.dataset.waBound = "true";
+
     const menu = document.createElement('div');
-    menu.className = 'wa-popup-menu';
-    menu.style.cssText = `
-      position: absolute;
-      bottom: 70px;
-      right: 0;
-      background: #1a1a1a;
-      border: 1px solid #333;
-      border-radius: 10px;
-      padding: 8px;
-      display: none;
-      flex-direction: column;
-      gap: 6px;
-      min-width: 200px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-      z-index: 999;
-    `;
-
+    menu.style.cssText = `position:absolute; bottom:70px; right:0; background:#1a1a1a; border:1px solid #333; border-radius:10px; padding:8px; display:none; flex-direction:column; gap:6px; min-width:200px; box-shadow:0 8px 24px rgba(0,0,0,0.4); z-index:999;`;
     cfg.whatsappNumbers.forEach((num, i) => {
       const label = (cfg.phoneNumbers && cfg.phoneNumbers[i]) ? cfg.phoneNumbers[i] : num;
       const item = document.createElement('a');
@@ -71,36 +67,24 @@ document.addEventListener('DOMContentLoaded', function () {
       item.target = '_blank';
       item.rel = 'noopener';
       item.textContent = `WhatsApp: ${label}`;
-      item.style.cssText = `
-        color: #fff;
-        text-decoration: none;
-        padding: 10px 12px;
-        border-radius: 6px;
-        font-size: 14px;
-        background: #222;
-      `;
-      item.addEventListener('mouseenter', () => item.style.background = '#e0202f');
-      item.addEventListener('mouseleave', () => item.style.background = '#222');
+      item.style.cssText = `color:#fff; text-decoration:none; padding:10px 12px; border-radius:6px; font-size:14px; background:#222;`;
       menu.appendChild(item);
     });
-
     waBtn.style.position = 'relative';
     waBtn.appendChild(menu);
-
-    waBtn.addEventListener('click', function (e) {
+    waBtn.addEventListener('click', e => {
       e.preventDefault();
       e.stopPropagation();
       menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
     });
+  });
 
-    document.addEventListener('click', function (e) {
-      if (!waBtn.contains(e.target)) {
-        menu.style.display = 'none';
-      }
+  document.addEventListener('click', e => {
+    document.querySelectorAll('[data-whatsapp-link] > div').forEach(menu => {
+      if (!menu.parentElement.contains(e.target)) menu.style.display = 'none';
     });
-  }
+  });
 });
-
 
 
 document.addEventListener('DOMContentLoaded', () => {
