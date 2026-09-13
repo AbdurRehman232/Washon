@@ -3,7 +3,7 @@
     "id": 1,
      "name": "Car Detailing Brush Set",
     "description": "5-piece soft-bristle detailing brush set for reaching tight spots like vents, wheels, badges, and interior trim without scratching surfaces.",
-    "price": "Rs. 0",
+    "price": "Rs. 700",
     "category": "Accessories",
     "image": "assets/images/car-detailing-brush.png"
   },
@@ -25,11 +25,11 @@
   },
   {
     "id": 4,
-    "name": "Microfiber Detailing Set",
-    "description": "A complete set of microfiber towels and applicators for streak-free interior and exterior care.",
-    "price": "Rs. 1,800",
-    "category": "Car Care",
-    "image": "https://loremflickr.com/800/800/microfiber,cloth?lock=4"
+    "name": "Microfiber 800GSM",
+    "description": "Ultra-thick 800GSM microfiber towel with a soft plush side and a scratch-free edge, built for safe drying and polishing without swirl marks.",
+    "price": "Rs. 400",
+    "category": "Accessories",
+    "image": "assets/images/Microfiber-800gsm.png"
   },
   {
     "id": 5,
