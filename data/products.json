@@ -207,4 +207,85 @@
     "category": "Accessories",
     "image": "assets/images/Areon-Gel-Dream-listing-2x.png"
   }
+  {
+    "id": 27,
+    "name": "All Purpose",
+    "description": "All Purpose cleaner tackles dust, grime and stains on multiple surfaces, leaving your car interior and exterior looking clean and fresh.",
+    "price": "Rs. 0",
+    "category": "Car Care",
+    "image": "assets/images/all-purpose.png"
+  },
+  {
+    "id": 28,
+    "name": "Shine and Protect",
+    "description": "Shine and Protect restores a deep, glossy finish to dashboards and trims while shielding them from dust, heat and fading.",
+    "price": "Rs. 0",
+    "category": "Car Care",
+    "image": "assets/images/shine-and-protect.png"
+  },
+  {
+    "id": 29,
+    "name": "Flamingo Wash & Wax",
+    "description": "Flamingo Wash & Wax cleans away dirt and road film while leaving a smooth, shiny wax layer in a single wash.",
+    "price": "Rs. 0",
+    "category": "Car Care",
+    "image": "assets/images/flamingo-wash-wax.png"
+  },
+  {
+    "id": 30,
+    "name": "Relax Coolant",
+    "description": "Relax Coolant helps regulate engine temperature, protecting against overheating, corrosion and scale build-up for a smoother drive.",
+    "price": "Rs. 0",
+    "category": "Car Care",
+    "image": "assets/images/relax-coolant.png"
+  },
+  {
+    "id": 31,
+    "name": "Carrera Coolant",
+    "description": "Carrera Coolant offers reliable cooling and anti-corrosion protection, keeping your engine performing well in all weather conditions.",
+    "price": "Rs. 0",
+    "category": "Car Care",
+    "image": "assets/images/carrera-coolant.png"
+  },
+  {
+    "id": 32,
+    "name": "Sidex Car Wax",
+    "description": "Sidex Car Wax gives your paint a rich, long-lasting shine while protecting it from UV rays, water spots and everyday wear.",
+    "price": "Rs. 0",
+    "category": "Car Care",
+    "image": "assets/images/sidex-car-wax.png"
+  },
+  {
+    "id": 33,
+    "name": "Cosmic Car Wax",
+    "description": "Cosmic Car Wax spreads easily to fill fine scratches and leave a mirror-like gloss with a durable protective coat.",
+    "price": "Rs. 0",
+    "category": "Car Care",
+    "image": "assets/images/cosmic-car-wax.png"
+  },
+  {
+    "id": 34,
+    "name": "7CF Car Wax",
+    "description": "7CF Car Wax delivers a smooth, brilliant finish and a water-repellent layer that keeps your car looking freshly polished.",
+    "price": "Rs. 0",
+    "category": "Car Care",
+    "image": "assets/images/7cf-car-wax.png"
+  },
+  {
+    "id": 35,
+    "name": "7CF Foam Tyre",
+    "description": "7CF Foam Tyre cleans and revives rubber with an easy-spray foam, giving tyres a deep black shine that lasts.",
+    "price": "Rs. 0",
+    "category": "Car Care",
+    "image": "assets/images/7cf-foam-tyre.png"
+  },
+  {
+    "id": 36,
+    "name": "7CF Anti-Rust",
+    "description": "7CF Anti-Rust penetrates stuck, corroded parts to loosen rust, lubricate moving surfaces and protect metal from future corrosion.",
+    "price": "Rs. 0",
+    "category": "Car Care",
+    "image": "assets/images/7cf-anti-rust.png"
+  }
+  
 ]
