@@ -11,8 +11,8 @@
    to be entered once.
 --------------------------------------------------------------- */
 window.WASHON = {
-  whatsappNumbers: ['923350247922', '923310288688'], // no +, no spaces, country code first
-  phoneNumbers: ['+92 335 0247922', '+92 331 0288688'],
+  whatsappNumber: '923310288688',
+  phoneNumber: '+92 335 0247922',
   email: 'washon127@gmail.com',
   address: 'Shop# A-127 Pilibhit Society, Scheme 33 Gulzar-e-hijri, Karachi',
   hours: 'Mon - Sat: 08:00 AM - 11:00 PM',
@@ -26,7 +26,6 @@ window.WASHON = {
   reviewsSheetUrl: 'https://script.google.com/macros/s/AKfycbwjRtKTrnCa12dGsKrmcvh70LIW56pKaoqPtMiIBdjTagk24r_TVpwg56wVjLHRINxFnA/exec'
 };
 
-
 document.addEventListener('DOMContentLoaded', function () {
   const cfg = window.WASHON;
   if (!cfg) return; // config.js not loaded — check script order
@@ -35,11 +34,11 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('[data-hours]').forEach(el => el.textContent = cfg.hours);
 
   document.querySelectorAll('[data-phone-text]').forEach(el => {
-    el.innerHTML = cfg.phoneNumbers.map(n => `<a href="tel:${n.replace(/\s+/g,'')}">${n}</a>`).join('<br>');
+    el.innerHTML = `<a href="tel:${cfg.phoneNumber.replace(/\s+/g, '')}">${cfg.phoneNumber}</a>`;
   });
 
   document.querySelectorAll('[data-whatsapp-text]').forEach(el => {
-    el.innerHTML = cfg.whatsappNumbers.map(n => `<a href="https://wa.me/${n}" target="_blank" rel="noopener">+${n}</a>`).join('<br>');
+    el.innerHTML = `<a href="https://wa.me/${cfg.whatsappNumber}" target="_blank" rel="noopener">+${cfg.whatsappNumber}</a>`;
   });
 
   document.querySelectorAll('[data-email]').forEach(el => {
@@ -49,98 +48,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.querySelectorAll('[data-facebook]').forEach(el => el.href = cfg.facebook);
   document.querySelectorAll('[data-instagram]').forEach(el => el.href = cfg.instagram);
-
   document.querySelectorAll('[data-directions]').forEach(el => el.href = cfg.mapsDirections);
 
-  // Plain Call Now buttons elsewhere on the site — link directly, no popup
-  document.querySelectorAll('[data-call]:not(#contact-call-btn)').forEach(el => {
-    el.href = `tel:${cfg.phoneNumbers[0].replace(/\s+/g, '')}`;
+  document.querySelectorAll('[data-call]').forEach(el => {
+    el.href = `tel:${cfg.phoneNumber.replace(/\s+/g, '')}`;
   });
 
-  // Contact page's Call Now button — popup with number choice
-  const contactCallBtn = document.getElementById('contact-call-btn');
-  if (contactCallBtn) {
-    const menu = document.createElement('div');
-    menu.style.cssText = `position:absolute; bottom:70px; right:0; background:#1a1a1a; border:1px solid #333; border-radius:10px; padding:8px; display:none; flex-direction:column; gap:6px; min-width:200px; box-shadow:0 8px 24px rgba(0,0,0,0.4); z-index:999;`;
-
-    cfg.phoneNumbers.forEach(num => {
-      const item = document.createElement('a');
-      item.href = `tel:${num.replace(/\s+/g, '')}`;
-      item.textContent = `Call: ${num}`;
-      item.style.cssText = `color:#fff; text-decoration:none; padding:10px 12px; border-radius:6px; font-size:14px; background:#222;`;
-      item.addEventListener('mouseenter', () => item.style.background = '#e0202f');
-      item.addEventListener('mouseleave', () => item.style.background = '#222');
-      menu.appendChild(item);
-    });
-
-    const callBtnPosition = getComputedStyle(contactCallBtn).position;
-    if (callBtnPosition === 'static') {
-      contactCallBtn.style.position = 'relative';
-    }
-
-    contactCallBtn.appendChild(menu);
-
-    contactCallBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
-    });
-  }
-
-  // Floating/header WhatsApp buttons — popup menu with number choice
-  document.querySelectorAll('[data-whatsapp-link]').forEach(waBtn => {
-    if (waBtn.dataset.waBound) return; // avoid double-binding on multiple buttons
-    waBtn.dataset.waBound = "true";
-
-    const menu = document.createElement('div');
-    menu.style.cssText = `position:absolute; bottom:70px; right:0; background:#1a1a1a; border:1px solid #333; border-radius:10px; padding:8px; display:none; flex-direction:column; gap:6px; min-width:200px; box-shadow:0 8px 24px rgba(0,0,0,0.4); z-index:999;`;
-
-    cfg.whatsappNumbers.forEach((num, i) => {
-      const label = (cfg.phoneNumbers && cfg.phoneNumbers[i]) ? cfg.phoneNumbers[i] : num;
-      const item = document.createElement('a');
-      item.href = `https://wa.me/${num}`;
-      item.target = '_blank';
-      item.rel = 'noopener';
-      item.textContent = `WhatsApp: ${label}`;
-      item.style.cssText = `color:#fff; text-decoration:none; padding:10px 12px; border-radius:6px; font-size:14px; background:#222;`;
-      item.addEventListener('mouseenter', () => item.style.background = '#e0202f');
-      item.addEventListener('mouseleave', () => item.style.background = '#222');
-      menu.appendChild(item);
-    });
-
-    // Only set relative positioning if the button isn't already fixed/absolute
-    // (prevents breaking the floating button's CSS position)
-    const currentPosition = getComputedStyle(waBtn).position;
-    if (currentPosition === 'static') {
-      waBtn.style.position = 'relative';
-    }
-
-    waBtn.appendChild(menu);
-
-    waBtn.addEventListener('click', function (e) {
-      e.preventDefault();
-      e.stopPropagation();
-      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
-    });
-  });
-
-  // Close any open popup menu (WhatsApp or Call) when clicking outside it
-  document.addEventListener('click', function (e) {
-    document.querySelectorAll('[data-whatsapp-link]').forEach(waBtn => {
-      const menu = waBtn.querySelector('div');
-      if (menu && !waBtn.contains(e.target)) {
-        menu.style.display = 'none';
-      }
-    });
-    if (contactCallBtn) {
-      const callMenu = contactCallBtn.querySelector('div');
-      if (callMenu && !contactCallBtn.contains(e.target)) {
-        callMenu.style.display = 'none';
-      }
-    }
+  document.querySelectorAll('[data-whatsapp-link]').forEach(el => {
+    el.href = `https://wa.me/${cfg.whatsappNumber}`;
+    el.target = '_blank';
   });
 });
-
 
 
 document.addEventListener('DOMContentLoaded', () => {
