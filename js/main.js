@@ -1,65 +1,23 @@
 /* ==========================================================================
    WASHON — MAIN.JS
    Site-wide behavior: loader, sticky header, mobile nav, active nav state,
-   scroll progress bar, page transitions, WhatsApp button, image fallbacks.
+   scroll progress bar, page transitions, WhatsApp button, image fallbacks,
+   contact details and Google Map.
    ========================================================================== */
 
-/* ---------------------------------------------------------------
-   CONTACT CONFIG
-   Fill these in once real WashOn business details are available.
-   Every page reads from this single object so numbers only need
-   to be entered once.
---------------------------------------------------------------- */
 window.WASHON = {
   whatsappNumber: '923310288688',
   phoneNumber: '+92 335 0247922',
   email: 'washon127@gmail.com',
   address: 'Shop# A-127 Pilibhit Society, Scheme 33 Gulzar-e-hijri, Karachi',
   hours: 'Mon - Sat: 08:00 AM - 11:00 PM',
-   mapsEmbed: 'https://www.google.com/maps?q=A-127+Pilibhit+Society+Scheme+33+Gulzar-e-Hijri+Karachi&output=embed',
-   mapsDirections: 'https://www.google.com/maps/dir/?api=1&destination=A-127+Pilibhit+Society+Scheme+33+Gulzar-e-Hijri+Karachi',
+  mapsEmbed: 'https://www.google.com/maps?q=A-127+Pilibhit+Society+Scheme+33+Gulzar-e-Hijri+Karachi&output=embed',
+  mapsDirections: 'https://www.google.com/maps/dir/?api=1&destination=A-127+Pilibhit+Society+Scheme+33+Gulzar-e-Hijri+Karachi',
   facebook: 'https://www.facebook.com/profile.php?id=61592873641647#',
   instagram: 'https://www.instagram.com/washon127/',
-  // Paste the Google Apps Script Web App URL here to send new review
-  // submissions straight into a Google Sheet. See GOOGLE_SHEET_SETUP.md
-  // in the project root for the step-by-step setup and the script to paste.
+  // Google Apps Script Web App URL that saves new reviews to a Google Sheet.
   reviewsSheetUrl: 'https://script.google.com/macros/s/AKfycbwjRtKTrnCa12dGsKrmcvh70LIW56pKaoqPtMiIBdjTagk24r_TVpwg56wVjLHRINxFnA/exec'
 };
-
-document.addEventListener('DOMContentLoaded', function () {
-  const cfg = window.WASHON;
-  if (!cfg) return; // config.js not loaded — check script order
-
-  document.querySelectorAll('[data-address]').forEach(el => el.textContent = cfg.address);
-  document.querySelectorAll('[data-hours]').forEach(el => el.textContent = cfg.hours);
-
-  document.querySelectorAll('[data-phone-text]').forEach(el => {
-    el.innerHTML = `<a href="tel:${cfg.phoneNumber.replace(/\s+/g, '')}">${cfg.phoneNumber}</a>`;
-  });
-
-  document.querySelectorAll('[data-whatsapp-text]').forEach(el => {
-    el.innerHTML = `<a href="https://wa.me/${cfg.whatsappNumber}" target="_blank" rel="noopener">+${cfg.whatsappNumber}</a>`;
-  });
-
-  document.querySelectorAll('[data-email]').forEach(el => {
-    el.textContent = cfg.email;
-    el.href = `mailto:${cfg.email}`;
-  });
-
-  document.querySelectorAll('[data-facebook]').forEach(el => el.href = cfg.facebook);
-  document.querySelectorAll('[data-instagram]').forEach(el => el.href = cfg.instagram);
-  document.querySelectorAll('[data-directions]').forEach(el => el.href = cfg.mapsDirections);
-
-  document.querySelectorAll('[data-call]').forEach(el => {
-    el.href = `tel:${cfg.phoneNumber.replace(/\s+/g, '')}`;
-  });
-
-  document.querySelectorAll('[data-whatsapp-link]').forEach(el => {
-    el.href = `https://wa.me/${cfg.whatsappNumber}`;
-    el.target = '_blank';
-  });
-});
-
 
 document.addEventListener('DOMContentLoaded', () => {
   initLoader();
@@ -67,7 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initActiveNav();
   initScrollProgress();
-  initWhatsApp();
+  initContactDetails();
+  initMap();
   initImageFallbacks();
   initFooterYear();
   initPageTransitions();
@@ -79,7 +38,6 @@ function initLoader() {
   const loader = document.getElementById('loader');
   if (!loader) return;
   const finish = () => loader.classList.add('hide');
-  // Keep it short — never force the visitor to wait.
   if (document.readyState === 'complete') {
     setTimeout(finish, 500);
   } else {
@@ -92,9 +50,6 @@ function initLoader() {
 function initHeader() {
   const header = document.querySelector('.site-header');
   if (!header) return;
-  const isInnerPage = header.dataset.solid === 'true';
-  if (isInnerPage) header.classList.add('solid');
-
   const onScroll = () => {
     if (window.scrollY > 40) header.classList.add('scrolled');
     else header.classList.remove('scrolled');
@@ -140,44 +95,61 @@ function initScrollProgress() {
   if (!bar) return;
   const update = () => {
     const h = document.documentElement;
-    const scrolled = h.scrollTop;
     const max = h.scrollHeight - h.clientHeight;
-    const pct = max > 0 ? (scrolled / max) * 100 : 0;
-    bar.style.width = pct + '%';
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
   };
   update();
   window.addEventListener('scroll', update, { passive: true });
   window.addEventListener('resize', update);
 }
 
-/* ---------- WhatsApp floating button ---------- */
-function initWhatsApp() {
-  const el = document.querySelector('.wa-float');
-  const headerWa = document.querySelector('.header-whatsapp');
-  const num = window.WASHON.whatsappNumber;
-  const link = num ? `https://wa.me/${num}` : '#';
-  if (el) {
-    el.setAttribute('href', link);
-    if (!num) el.setAttribute('aria-disabled', 'true');
-  }
-  if (headerWa) headerWa.setAttribute('href', link);
+/* ---------- Contact details, WhatsApp, call, social links ---------- */
+function initContactDetails() {
+  const cfg = window.WASHON;
+  const tel = cfg.phoneNumber.replace(/\s+/g, '');
+  const wa = `https://wa.me/${cfg.whatsappNumber}`;
 
-  document.querySelectorAll('[data-call]').forEach(a => {
-    a.setAttribute('href', window.WASHON.phoneNumber ? `tel:${window.WASHON.phoneNumber.replace(/\s+/g, '')}` : '#');
+  document.querySelectorAll('[data-address]').forEach(el => el.textContent = cfg.address);
+  document.querySelectorAll('[data-hours]').forEach(el => el.textContent = cfg.hours);
+
+  document.querySelectorAll('[data-phone-text]').forEach(el => {
+    el.innerHTML = `<a href="tel:${tel}">${cfg.phoneNumber}</a>`;
   });
-  document.querySelectorAll('[data-whatsapp-link]').forEach(a => a.setAttribute('href', link));
-  document.querySelectorAll('[data-directions]').forEach(a => a.setAttribute('href', window.WASHON.mapsDirections));
-  document.querySelectorAll('[data-email]').forEach(el => { el.textContent = window.WASHON.email; el.setAttribute('href', `mailto:${window.WASHON.email}`); });
-  document.querySelectorAll('[data-address]').forEach(el => el.textContent = window.WASHON.address);
-  document.querySelectorAll('[data-hours]').forEach(el => el.textContent = window.WASHON.hours);
-  document.querySelectorAll('[data-phone-text]').forEach(el => el.textContent = window.WASHON.phoneNumber || '[ADD PHONE NUMBER]');
-  document.querySelectorAll('[data-facebook]').forEach(a => a.setAttribute('href', window.WASHON.facebook));
-  document.querySelectorAll('[data-instagram]').forEach(a => a.setAttribute('href', window.WASHON.instagram));
+  document.querySelectorAll('[data-whatsapp-text]').forEach(el => {
+    el.innerHTML = `<a href="${wa}" target="_blank" rel="noopener">+${cfg.whatsappNumber}</a>`;
+  });
+
+  document.querySelectorAll('[data-email]').forEach(el => {
+    el.textContent = cfg.email;
+    el.setAttribute('href', `mailto:${cfg.email}`);
+  });
+
+  document.querySelectorAll('[data-facebook]').forEach(a => a.setAttribute('href', cfg.facebook));
+  document.querySelectorAll('[data-instagram]').forEach(a => a.setAttribute('href', cfg.instagram));
+  document.querySelectorAll('[data-directions]').forEach(a => {
+    a.setAttribute('href', cfg.mapsDirections);
+    a.setAttribute('target', '_blank');
+    a.setAttribute('rel', 'noopener');
+  });
+  document.querySelectorAll('[data-call]').forEach(a => a.setAttribute('href', `tel:${tel}`));
+
+  document.querySelectorAll('[data-whatsapp-link], .wa-float, .header-whatsapp').forEach(a => {
+    a.setAttribute('href', wa);
+    a.setAttribute('target', '_blank');
+    a.setAttribute('rel', 'noopener');
+  });
 }
 
-/* ---------- Graceful image fallback ----------
-   If a placeholder photo source fails to load (e.g. offline demo),
-   swap in a styled HUD-pattern placeholder instead of a broken icon. */
+/* ---------- Google Map embed ---------- */
+function initMap() {
+  const src = window.WASHON.mapsEmbed;
+  if (!src) return;
+  document.querySelectorAll('.location-map').forEach(box => {
+    box.innerHTML = `<iframe src="${src}" title="WashOn location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>`;
+  });
+}
+
+/* ---------- Graceful image fallback ---------- */
 function initImageFallbacks() {
   document.querySelectorAll('.photo img').forEach(img => {
     img.addEventListener('error', () => {
