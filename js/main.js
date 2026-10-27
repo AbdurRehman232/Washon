@@ -16,8 +16,8 @@ window.WASHON = {
   email: 'washon127@gmail.com',
   address: 'Shop# A-127 Pilibhit Society, Scheme 33 Gulzar-e-hijri, Karachi',
   hours: 'Mon - Sat: 08:00 AM - 11:00 PM',
-  mapsEmbed: '', // full Google Maps embed src URL
-  mapsDirections: 'https://maps.google.com',
+mapsEmbed: 'https://www.google.com/maps?q=A-127+Pilibhit+Society+Scheme+33+Gulzar-e-Hijri+Karachi&output=embed',
+mapsDirections: 'https://www.google.com/maps/dir/?api=1&destination=A-127+Pilibhit+Society+Scheme+33+Gulzar-e-Hijri+Karachi',
   facebook: 'https://www.facebook.com/profile.php?id=61592873641647#',
   instagram: 'https://www.instagram.com/washon127/',
   // Paste the Google Apps Script Web App URL here to send new review
