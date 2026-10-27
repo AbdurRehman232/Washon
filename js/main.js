@@ -11,9 +11,9 @@ window.WASHON = {
   email: 'washon127@gmail.com',
   address: 'Shop# A-127 Pilibhit Society, Scheme 33 Gulzar-e-hijri, Karachi',
   hours: 'Mon - Sat: 08:00 AM - 11:00 PM',
-  mapsEmbed: 'https://www.google.com/maps?q=A-127+Pilibhit+Society+Scheme+33+Gulzar-e-Hijri+Karachi&output=embed',
-  mapsDirections: 'https://www.google.com/maps/dir/?api=1&destination=A-127+Pilibhit+Society+Scheme+33+Gulzar-e-Hijri+Karachi',
-  facebook: 'https://www.facebook.com/profile.php?id=61592873641647#',
+ mapsEmbed: 'https://www.google.com/maps?q=24.9667119,67.1216229&z=17&output=embed',
+mapsDirections: 'https://www.google.com/maps/dir/?api=1&destination=24.9667119,67.1216229',
+   facebook: 'https://www.facebook.com/profile.php?id=61592873641647#',
   instagram: 'https://www.instagram.com/washon127/',
   // Google Apps Script Web App URL that saves new reviews to a Google Sheet.
   reviewsSheetUrl: 'https://script.google.com/macros/s/AKfycbwjRtKTrnCa12dGsKrmcvh70LIW56pKaoqPtMiIBdjTagk24r_TVpwg56wVjLHRINxFnA/exec'
